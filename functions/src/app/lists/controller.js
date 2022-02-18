@@ -66,3 +66,20 @@ exports.createTask = async (req,res) =>  {
         })
     }
 }
+
+exports.removeTask = async (req,res) => {
+    try {
+        const {id} = req.body
+        const result = await repository.removeTask({id});
+        return res.json({
+            success:true,
+            payload:result
+        })
+
+    } catch ( err ) {
+        return res.json({
+            success:false,
+            payload:err
+        })
+    }
+}

@@ -1,6 +1,6 @@
-const {Router} = require( "express" )
-const controller = require("./controller")
-const router = Router( )
+const {Router} = require( "express" );
+const controller = require("./controller");
+const router = Router( );
 
 /**
  *    @apiGroup Lists
@@ -19,8 +19,10 @@ router.get( "/tasks", controller.getTasks );
 
 router.post("/tasks/create", controller.createTask);
 
-router.post("/tasks/rename",controller.renameTask);
+router.post("/tasks/rename", controller.renameTask);
 
-router.post("/tasks/toggle",controller.toggleTask);
+router.post("/tasks/toggle", controller.toggleTask);
 
-module.exports = router
+router.post("/tasks/remove", controller.removeTask);
+
+module.exports = router;

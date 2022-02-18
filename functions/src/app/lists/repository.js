@@ -27,3 +27,9 @@ exports.createTask = async({
     })
     return await task.save()
 }
+
+exports.removeTask = async({
+    id
+}) => {
+    return await Task.find({_id:id}).deleteOne()
+}
